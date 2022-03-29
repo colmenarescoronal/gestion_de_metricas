@@ -1,0 +1,30 @@
+
+<!--Eliminar indicador-->
+<div class="formPrincipal" style="margin-top:10vh">
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Eliminar indicador</h4>
+  </div>
+
+  <form>
+    <div class="modal-body" style="width: 100%;">
+      <div class="mb-3">
+
+
+          <div class="row contenidoTabla" style="margin:auto;text-align:center">
+            <table class="table-bordered">
+              <th>INDICADOR</th>
+              <th>ACCION</th>
+              <tr *ngFor="let indicador of indicadores">
+                <td>{{indicador.DES_NOMBRE}}</td>
+                <td><button class="btn btn-dark" (click)="eliminarIndicador(indicador.ID)">Eliminar</button></td>
+              </tr>
+            </table>
+          </div>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+<!--Termina eliminar indicador-->

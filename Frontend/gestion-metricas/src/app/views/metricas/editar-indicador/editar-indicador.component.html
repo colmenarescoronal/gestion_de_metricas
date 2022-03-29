@@ -1,0 +1,66 @@
+<!--Form editar indicador-->
+<div class="formPrincipal" style="margin-top:10vh">
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar indicador</h4>
+  </div>
+
+  <form>
+    <div class="modal-body" style="width: 100%;">
+      <div class="mb-3">
+
+
+          <div class="row contenidoTabla" style="margin:auto;text-align:center">
+            <table class="table-bordered">
+              <th>INDICADOR</th>
+              <th>ACCION</th>
+              <tr *ngFor="let indicador of indicadores">
+                <td>{{indicador.DES_NOMBRE}}</td>
+                <td><button class="btn btn-dark" (click)="mostrarModalEditar(indicador.ID,indicador.DES_NOMBRE,content)">Editar</button></td>
+              </tr>
+            </table>
+          </div>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+<!--Termina editar indicador-->
+
+
+<!--Comienza modal editar-->
+<ng-template #content let-modal>
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Click cerrar')"></button>
+  </div>
+
+  <form [formGroup]="formEditar">
+    <div class="modal-body" style="width: 100%">
+      <div class="mb-3" style="width: 100%; margin:auto">
+
+
+        <!--Campo Nombre-->
+        <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+          <label for="nombre" class="text-muted" style="padding-left:0;">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
+        </div>
+        <!--Termina Campo Nombre-->
+
+      </div>
+    </div>
+  </form>
+
+  <!--Comienza Spinner Loading-->
+  <div *ngIf="editando === true" class="spinner"></div>
+  <!--Termina Spinner Loading-->
+
+  <div class="modal-footer" *ngIf="editando === false">
+    <button type="button" class="btn btn-outline-dark" (click)="confirmaEditar()">Aceptar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Click cancelar')">Cancelar</button>
+  </div>
+
+</ng-template>
+<!--Termina modal editar-->

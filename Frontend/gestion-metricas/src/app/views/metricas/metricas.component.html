@@ -1,0 +1,23 @@
+
+<!--Titulo-->
+<div style="display:flex; justify-content:center; margin-top: 2vh;">
+  <h2>Gestión de métricas</h2>
+</div>
+<!--Termina Titulo-->
+
+<!--Boton Exportar Datos-->
+<div class="boton">
+  <button class="btn btn-dark" (click)="exportarArchivo()">Exportar gráfico</button>
+</div>
+<!--Termina Boton Exportar Datos-->
+
+<!--Spinner-->
+<div *ngIf="obteniendoDatos === true" class="spinner"></div>
+<!--Termina Spinner-->
+
+<!--Comienza grafica-->
+<div class="row" id="divChart">
+  <canvas id="myChart"></canvas>
+</div>
+<!--Termina grafico-->
+

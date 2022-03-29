@@ -1,0 +1,41 @@
+<!--Form agregar -->
+<div class="formPrincipal" style="margin-top:10vh">
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Agregar dato</h4>
+  </div>
+
+  <form [formGroup]="formAgregarDato" >
+    <div class="modal-body" style="width: 100%">
+      <div class="mb-3" style="width: 100%; margin:auto">
+
+        <!--Campo Indicador-->
+        <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+          <label for="indicador" class="text-muted" style="padding-left:0;">Seleccione indicador:</label>
+          <select name="indicador" id="indicador" class="form-select" formControlName="indicador" required>
+            <option *ngFor="let indicador of indicadores" value="{{indicador.ID}}">{{indicador.DES_NOMBRE}}</option>
+          </select>
+        </div>
+        <!--Termina indicador-->
+
+        <!--Campo nombre-->
+        <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+          <label for="nombre" class="text-muted" style="padding-left:0;">Nombre del dato:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
+        </div>
+        <!--Termina nombre-->
+
+      </div>
+    </div>
+  </form>
+
+  <!--Comienza Spinner Loading-->
+  <div *ngIf="registrando === true" class="spinner"></div>
+  <!--Termina Spinner Loading-->
+
+  <div class="modal-footer" *ngIf="registrando === false">
+    <button type="button" class="btn btn-outline-dark" (click)="registrarDato()">Registrar</button>
+  </div>
+
+</div>
+<!--Termina agregar indicador-->

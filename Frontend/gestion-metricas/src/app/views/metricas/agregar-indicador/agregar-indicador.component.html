@@ -1,0 +1,33 @@
+<!--Form agregar indicador-->
+<div class="formPrincipal" style="margin-top:10vh">
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Agregar indicador</h4>
+  </div>
+
+  <form [formGroup]="formAgregarIndicador" >
+    <div class="modal-body" style="width: 100%">
+      <div class="mb-3" style="width: 100%; margin:auto">
+
+
+        <!--Campo nombre-->
+        <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+          <label for="nombre" class="text-muted" style="padding-left:0;">Nombre del indicador:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
+        </div>
+        <!--Termina campo nombre-->
+
+      </div>
+    </div>
+  </form>
+
+  <!--Comienza Spinner Loading-->
+  <div *ngIf="registrando === true" class="spinner"></div>
+  <!--Termina Spinner Loading-->
+
+  <div class="modal-footer" *ngIf="registrando === false">
+    <button type="button" class="btn btn-outline-dark" (click)="registrarIndicador()">Registrar</button>
+  </div>
+
+</div>
+<!--Termina agregar indicador-->

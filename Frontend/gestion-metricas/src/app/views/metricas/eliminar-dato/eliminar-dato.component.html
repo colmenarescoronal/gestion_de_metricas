@@ -1,0 +1,36 @@
+
+<!--Eliminar dato-->
+<div class="formPrincipal" style="margin-top:10vh">
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Eliminar dato</h4>
+    <div>
+      <label for="indicador" class="text-muted" style="padding-left:0;">Seleccione indicador:</label>
+      <select id="indicador" name="indicador" class="form-select"  (change)="onChangeIndicador()" #cbIndicador>
+        <option *ngFor="let indicador of indicadores" value="{{indicador.ID}}">{{indicador.DES_NOMBRE}}</option>
+      </select>
+    </div>
+  </div>
+
+  <form>
+    <div class="modal-body" style="width: 100%;">
+      <div class="mb-3">
+
+
+          <div class="row contenidoTabla" style="margin:auto;text-align:center">
+            <table class="table-bordered">
+              <th>DATO</th>
+              <th>ACCION</th>
+              <tr *ngFor="let dato of datos">
+                <td>{{dato.DES_NOMBRE}}</td>
+                <td><button class="btn btn-dark" (click)="eliminarDato(dato.ID)">Eliminar</button></td>
+              </tr>
+            </table>
+          </div>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+<!--Termina eliminar dato-->

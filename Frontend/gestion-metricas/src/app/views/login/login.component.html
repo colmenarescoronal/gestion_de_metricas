@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <div class="container contenidoPrincipal">
+    <div class="row">
+
+      <!--Comienza titulo-->
+      <div class="titulo">
+        <h1 style="margin:auto">Login</h1>
+        <p style="margin:auto" class="text-primary">GESTION DE METRICAS</p>
+      </div>
+      <!--Termina titulo login-->
+
+
+      <!--Comienza login form-->
+      <div class="col-lg">
+        <div class="loginForm fadeInDown">
+          <form [formGroup]="formLogin">
+            <!--Comienza campo usuario-->
+            <div class="row mb-3 mt-3" style="width:80%;margin:auto;">
+              <label class="text-muted" for="usuario" style="padding-left:0;">Usuario</label>
+              <input id="usuario" name="usuario" class="form-control" formControlName="usuario" type="text"
+                placeholder="Usuario o email">
+            </div>
+            <!--Termina campo usuario-->
+
+            <!--Comienza campo contraseña-->
+            <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+              <label class="text-muted" for="contrasena" style="padding-left:0;">Contraseña</label>
+              <input id="contrasena" class="form-control" formControlName="contrasena" type="password"
+                placeholder="Ingrese contraseña">
+            </div>
+            <!--Termina campo contraseña-->
+
+            <!--Alerta-->
+            <div *ngIf="alertaLogin === true" class="alert alert-danger row mb-3 mt-3" role="alert"
+              style="width:80%;height:10%;margin:auto">
+              Todos los campos son obligatorios.
+            </div>
+            <!--Termina Alerta-->
+
+          </form>
+
+          <!--Comienza Spinner Loading-->
+          <div *ngIf="ingresando === true" class="spinner"></div>
+          <!--Termina Spinner Loading-->
+
+          <!--Comienza boton ingresar-->
+          <div  *ngIf="ingresando === false" class="row mb-3 mt-3" style="width:80%;margin:auto">
+            <button class="btn btn-dark" style="width:100%" (click)="login()">Ingresar</button>
+          </div>
+          <!--Termina boton ingresar-->
+
+          <!--Comienza boton registrarse-->
+          <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+            <button class="btn btn-outline-dark btn-block" style="width:100%;" data-toggle="modal"
+              data-target="#myModal" (click)="mostrarModalRegistrarse(content)">Registrarse</button>
+          </div>
+          <!--Termina boton registrarse-->
+
+          <!--Mensaje Login-->
+          <div class="row mb-3 mt-3 text-muted" style="width:80%;margin:auto">
+            <p> Ingrese para una prueba rápida de nuestro sistema.</p>
+          </div>
+          <!--Termina Mensaje Login-->
+
+        </div>
+      </div>
+      <!--Termina login form-->
+    </div>
+
+  </div>
+
+
+  <!--Comienza modal registrarse-->
+  <ng-template #content let-modal>
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Registrarse</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Click cerrar')"></button>
+    </div>
+
+    <form [formGroup]="formRegistrarse">
+      <div class="modal-body" style="width: 100%">
+        <div class="mb-3" style="width: 100%; margin:auto">
+
+
+          <!--Campo usuario-->
+          <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+            <label for="usuario" class="text-muted" style="padding-left:0;">Usuario</label>
+            <input type="text" id="usuario" name="usuario" class="form-control" formControlName="usuario" required>
+          </div>
+          <!--Termina campo usuario-->
+
+          <!--Campo contraseña-->
+          <div class="row mb-3 mt-3" style="width:80%;margin:auto">
+            <label for="contrasena" class="text-muted" style="padding-left:0;">Contraseña</label>
+            <input type="password" id="contrasena" class="form-control" formControlName="contrasena">
+          </div>
+          <!--Termina campo contraseña-->
+
+          <!--Campo  validar contraseña-->
+          <div class="row mb-3 mt-3" style="width:80%; margin:auto">
+            <label for="confirmarContrasena" class="text-muted" style="padding-left:0;">Confirmar contraseña</label>
+            <input type="password" id="confirmarContrasena" class="form-control" formControlName="confirmarContrasena">
+          </div>
+          <!--Termina campo validar contraseña-->
+
+          <!--Alerta Contrasena-->
+          <div *ngIf="alertaContrasena === true" class="alert alert-danger row mb-3 mt-3" role="alert"
+            style="width:80%;height:10%;margin:auto">
+            La contraseña y su confirmación no coinciden.
+          </div>
+          <!--Termina Alerta Contrasena-->
+
+          <!--Alerta-->
+          <div *ngIf="alertaRegistrarse === true" class="alert alert-danger row mb-3 mt-3" role="alert"
+            style="width:80%;height:10%;margin:auto">
+            Todos los campos son obligatorios.
+          </div>
+          <!--Termina Alerta-->
+
+        </div>
+      </div>
+    </form>
+
+    <!--Comienza Spinner Loading-->
+    <div *ngIf="registrando === true" class="spinner"></div>
+    <!--Termina Spinner Loading-->
+
+    <div class="modal-footer" *ngIf="registrando === false">
+      <button type="button" class="btn btn-outline-dark" (click)="registrarse()">Registrarse</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Click cancelar')">Cancelar</button>
+    </div>
+
+  </ng-template>
+  <!--Termina modal registrarse-->
+
+
+</body>
+
+</html>

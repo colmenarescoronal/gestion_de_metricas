@@ -2,7 +2,7 @@
 Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
 
 
-Despliegue de aplicación:
+## Despliegue de aplicación:
   Se encuentran distribuidas en tres carpetas principales el Frontend, Backend y la base de datos.
   
   1- Crear base de datos gestion_metricas e importar archivo gestion_metricas.sql desde Database/gestion_metricas.sql

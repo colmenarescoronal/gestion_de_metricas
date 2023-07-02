@@ -1,4 +1,4 @@
-# gestionmetricas
+# Gestión de métricas
 Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
 
 

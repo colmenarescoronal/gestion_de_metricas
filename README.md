@@ -3,7 +3,7 @@ Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
 
 
 ## Despliegue de aplicación:
-  La aplicación se encuentra distribuida en tres carpetas principalmente el frontend, backend y la base de datos.
+  La aplicación se encuentra distribuida en tres carpetas principalmente; el frontend, backend y la base de datos.
   
   1. En caso de utilizar algún paquete para la gestión de la base de datos por ejemplo XAMPP o WAMP, será necesario iniciar Mysql.
   1. Crear la base de datos gestion_metricas e importar el archivo gestion_metricas.sql desde la carpeta Database.

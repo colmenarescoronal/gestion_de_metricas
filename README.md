@@ -11,7 +11,7 @@ Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
   1. Para levantar el frontend, abrir la carpeta Frontend/gestion-metricas con VSCode, y correr el comando  $ npm install, posteriormente $ ng serve
   
  ### Credenciales:
-usuario: superadmin
-contraseña: superadmin
+* usuario: superadmin
+* contraseña: superadmin
   
   

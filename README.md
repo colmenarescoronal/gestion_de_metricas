@@ -1,5 +1,5 @@
 # Gestión de métricas
-Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
+Un ejercicio técnico para Mid Level Dev 2 en Innpactia.
 
 
 ## Despliegue de la aplicación:

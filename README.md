@@ -2,7 +2,7 @@
 Una ejercicio técnico para Mid Level Dev 2 en Innpactia.
 
 
-## Despliegue de aplicación:
+## Despliegue de la aplicación:
   La aplicación se encuentra distribuida en tres carpetas principalmente; el frontend, backend y la base de datos.
   
   1. En caso de utilizar algún paquete para gestión de bases de datos por ejemplo XAMPP o WAMP, será necesario iniciar Mysql.
